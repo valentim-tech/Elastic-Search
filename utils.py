@@ -3,6 +3,7 @@ import pyspark.sql.functions as f
 import pandas as pd
 import re
 import csv
+import json
 
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
@@ -172,46 +173,6 @@ def generate_actions(rows):
             }
         }
 
-def generate_actions_attributes(rows):
-    """
-    Converter cada linha em um documento Elasticsearch
-    """    
-    for row in rows:
-        yield {
-            "_index": "ofertas_corpus_attributes",
-            "_id": str(row['id_product']),  # Usar id_product como _id
-            "_source": {
-                "desc_product": row['desc_product'],
-                "preco_medio": row['preco_medio'],
-                "categoria": row['categoria'],
-                "marca": row['marca'],
-                "cor": row['cor'],
-                "atributo_1": row['atributo_1'],
-                "atributo_2": row['atributo_2'],
-                "atributo_3": row['atributo_3'],
-                "atributo_4": row['atributo_4'],
-                "atributo_5": row['atributo_5'],
-                "atributo_6": row['atributo_6'],
-            }
-        }
-
-def search_similar(desc, max_hits=None):
-    """
-    Buscar ofertas semelhantes
-    """
-    query = {
-        "query": {
-            "match": {
-                "desc_product": desc
-            }
-        }
-    }
-    if max_hits is not None:
-        query["size"] = max_hits  # Adiciona o parâmetro size apenas se max_hits for fornecido
-    
-    response = es.search(index="ofertas_corpus", body=query)
-    return response['hits']['hits']
-
 def normalize_scores(query_id, query_desc, results, max_range=100):
     """
     Normalizar scores de saída do Elastic Search
@@ -248,6 +209,149 @@ def perform_elastic_search(query_rows, num_results_per_query=1):
         all_results.extend(normalized_results)
 
     return all_results
+
+def generate_actions_attributes(rows):
+    """
+    Converter cada linha em um documento Elasticsearch
+    """    
+    for row in rows:
+        yield {
+            "_index": "ofertas_corpus_attributes",
+            "_id": str(row['id_product']),  # Usar id_product como _id
+            "_source": {
+                "desc_product": row['desc_product'],
+                "preco_medio": row['preco_medio'],
+                "categoria": row['categoria'],
+                "marca": row['marca'],
+                "cor": row['cor'],
+                "atributo_1": row['atributo_1'],
+                "atributo_2": row['atributo_2'],
+                "atributo_3": row['atributo_3'],
+                "atributo_4": row['atributo_4'],
+                "atributo_5": row['atributo_5'],
+                "atributo_6": row['atributo_6'],
+            }
+        }
+
+def weighted_search_similar(row_data, max_hits=None):
+    weights = {
+        "desc_product": 1.0,
+        "preco_medio": 1.0,
+        "categoria": 1.0,
+        "marca": 1.0,
+        "cor": 0.7,
+        "atributo_1": 0.5,
+        "atributo_2": 0.5,
+        "atributo_3": 0.5,
+        "atributo_4": 0.5,
+        "atributo_5": 0.5,
+        "atributo_6": 0.5
+    }
+    
+    should_clauses = []
+    for field in weights:
+        value = row_data[field]
+        if value:
+            should_clauses.append({
+                "match": {
+                    field: {
+                        "query": value,
+                        "boost": weights[field]
+                    }
+                }
+            })
+
+    query = {
+        "query": {
+            "bool": {
+                "should": should_clauses,
+                "minimum_should_match": 1
+            }
+        }
+    }
+
+    if max_hits is not None:
+        query["size"] = max_hits  # Adiciona o parâmetro size apenas se max_hits for fornecido
+
+    response = es.search(index="ofertas_corpus_attributes", body=query)
+    return response['hits']['hits']
+
+def normalize_scores_attributes(row, query_desc, results, max_range=100):
+    """
+    Normalizar scores de saída do Elastic Search
+    """  
+    query_id = row['sku']
+
+    if not results:
+        return []
+    # Normalizar com base no maior score, mas verificar se é exato
+    max_score = max(hit['_score'] for hit in results)
+    normalized = []
+    for hit in results:
+        orig_score = hit['_score']
+        hit_desc = hit['_source']['desc_product']
+        # Se o hit for exato (ignorando maiúsculas/minúsculas e espaços), atribuir 100
+        if query_desc.strip().lower() == hit_desc.strip().lower():
+            norm_score = float(max_range)  # 100.0 como float para consistência
+        else:
+            # Caso contrário, normalizar proporcionalmente ao maior score
+            norm_score = (orig_score / max_score) * max_range if max_score > 0 else 0.0
+        normalized.append(
+            (
+                query_id, 
+                query_desc, 
+                hit['_id'], 
+                hit_desc, 
+                orig_score, 
+                norm_score,
+                hit['_source']['preco_medio'],
+                hit['_source']['categoria'],
+                hit['_source']['marca'],
+                hit['_source']['cor'],
+                hit['_source']['atributo_1'],
+                hit['_source']['atributo_2'],
+                hit['_source']['atributo_3'],
+                hit['_source']['atributo_4'],
+                hit['_source']['atributo_5'],
+                hit['_source']['atributo_6']
+            )
+        )
+
+    return normalized
+
+# Função para processar alvos e criar o DataFrame
+def perform_elastic_search_attributes(query_rows, num_results_per_query=1):
+    """
+    Processar query e entrega lista de tuplas com resultados
+    """
+    # Processar todas as linhas e coletar os resultados
+    all_results = []
+    for row in tqdm(query_rows, desc='Searching'):
+        query_desc = row['desc_product']
+
+        results = weighted_search_similar(row, max_hits=num_results_per_query)
+        normalized_results = normalize_scores_attributes(row, query_desc, results, max_range=100)
+
+        all_results.extend(normalized_results)
+
+    return all_results
+
+def search_similar(desc, max_hits=None):
+    """
+    Buscar ofertas semelhantes
+    """
+    query = {
+        "query": {
+            "match": {
+                "desc_product": desc
+            }
+        }
+    }
+    if max_hits is not None:
+        query["size"] = max_hits  # Adiciona o parâmetro size apenas se max_hits for fornecido
+    
+    response = es.search(index="ofertas_corpus", body=query)
+    return response['hits']['hits']
 
 def save_csv(tuple_list, output_path, column_names, delimiter=";"):
     """
