@@ -172,6 +172,28 @@ def generate_actions(rows):
             }
         }
 
+def generate_actions_attributes(rows):
+    """
+    Converter cada linha em um documento Elasticsearch
+    """    
+    for row in rows:
+        yield {
+            "_index": "ofertas_corpus_attributes",
+            "_id": str(row['id_product']),  # Usar id_product como _id
+            "_source": {
+                "desc_product": row['desc_product'],
+                "preco_medio": row['preco_medio'],
+                "categoria": row['categoria'],
+                "marca": row['marca'],
+                "cor": row['cor'],
+                "atributo_1": row['atributo_1'],
+                "atributo_2": row['atributo_2'],
+                "atributo_3": row['atributo_3'],
+                "atributo_4": row['atributo_4'],
+                "atributo_5": row['atributo_5'],
+                "atributo_6": row['atributo_6'],
+            }
+        }
 
 def search_similar(desc, max_hits=None):
     """
