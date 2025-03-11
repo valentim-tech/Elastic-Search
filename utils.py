@@ -16,6 +16,21 @@ from tqdm import tqdm
 
 MAIN_PATH = "C:/Users/renato.valentim/Documents/ElasticSearch"
 
+def convert_string_columns_to_upper(df):
+    """
+    Transformar todas as colunas string do DataFrame em uppercase.
+    """
+    schema = df.schema
+    
+    # Iterar por todas as colunas no DataFrame
+    for field in schema.fields:
+        # Checkar se o column type é StringType
+        if isinstance(field.dataType, StringType):
+            # Converter a string column para uppercase
+            df = df.withColumn(field.name, f.upper(f.col(field.name)))
+    
+    return df
+
 def remove_accents_df(df, columns):
     """
     Remove acentos de colunas específicas em um DataFrame PySpark,
