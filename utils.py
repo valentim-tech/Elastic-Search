@@ -235,11 +235,11 @@ def generate_actions_attributes(rows):
 
 def weighted_search_similar(row_data, max_hits=None):
     weights = {
-        "desc_product": 1.0,
-        "preco_medio": 1.0,
+        "desc_product": 0.0,
+        "preco_medio": 0.5,
         "categoria": 1.0,
-        "marca": 1.0,
-        "cor": 0.7,
+        "marca": 0.0,
+        "cor": 0.5,
         "atributo_1": 0.5,
         "atributo_2": 0.5,
         "atributo_3": 0.5,
@@ -353,7 +353,7 @@ def search_similar(desc, max_hits=None):
     response = es.search(index="ofertas_corpus", body=query)
     return response['hits']['hits']
 
-def save_csv(tuple_list, output_path, column_names, delimiter=";"):
+def save_csv(tuple_list, output_path, column_names, delimiter=","):
     """
     Salva resultados em csv
     """
