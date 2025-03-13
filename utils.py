@@ -4,7 +4,9 @@ import pandas as pd
 import re
 import csv
 import json
+import os
 
+from dotenv import load_dotenv
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 from pyspark.sql import SparkSession
@@ -15,8 +17,12 @@ from datetime import date, datetime, timedelta
 from functools import reduce
 from tqdm import tqdm
 
-MAIN_PATH = "C:/Users/renato.valentim/Documents/ElasticSearch"
-ELASTIC_PATH = "C:/Users/renato.valentim/Elastic-Search"
+# Carregar as variáveis do .env
+load_dotenv()
+
+# Acessar as variáveis
+MAIN_PATH = os.getenv("MAIN_PATH")
+ELASTIC_PATH = os.getenv("ELASTIC_PATH")
 
 def convert_string_columns_to_upper(df):
     """
