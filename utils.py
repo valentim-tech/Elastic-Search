@@ -255,22 +255,28 @@ def weighted_search_similar(row_data, max_hits=None):
         "atributo_6": 0.5
     }
     
+    target_category = row_data["categoria"]
+    if not target_category:
+        print(f"Categoria não fornecida para {row_data['desc_product']}, busca sem filtro de categoria será realizada.")
+    
     should_clauses = []
     for field in weights:
-        value = row_data[field]
-        if value:
-            should_clauses.append({
-                "match": {
-                    field: {
-                        "query": value,
-                        "boost": weights[field]
+        if field != "categoria":
+            value = row_data[field]
+            if value:
+                should_clauses.append({
+                    "match": {
+                        field: {
+                            "query": value,
+                            "boost": weights[field]
+                        }
                     }
-                }
-            })
+                })
 
     query = {
         "query": {
             "bool": {
+                "filter": [{"match": {"categoria": target_category}}] if target_category else [],  # filtra pela categoria exata caso esteja presente
                 "should": should_clauses,
                 "minimum_should_match": 1
             }
