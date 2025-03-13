@@ -258,18 +258,34 @@ def generate_actions_attributes(rows):
         }
 
 def weighted_search_similar(row_data, max_hits=None):
+    # # Pesos para busca exata
+    # weights = {
+    #     "desc_product": 0.5,
+    #     "preco_medio": 1.0,
+    #     "categoria": 1.0,
+    #     "marca": 1.0,
+    #     "cor": 1.0,
+    #     "atributo_1": 0.5,
+    #     "atributo_2": 0.5,
+    #     "atributo_3": 0.5,
+    #     "atributo_4": 0.5,
+    #     "atributo_5": 0.5,
+    #     "atributo_6": 0.5
+    # }
+
+    # Pesos para busca de concorrentes
     weights = {
-        "desc_product": 0.5,
-        "preco_medio": 1.0,
+        "desc_product": 0.0,
+        "preco_medio": 0.7,
         "categoria": 1.0,
-        "marca": 1.0,
+        "marca": 0.0,
         "cor": 1.0,
-        "atributo_1": 0.5,
+        "atributo_1": 0.7,
         "atributo_2": 0.5,
-        "atributo_3": 0.5,
+        "atributo_3": 0.3,
         "atributo_4": 0.5,
-        "atributo_5": 0.5,
-        "atributo_6": 0.5
+        "atributo_5": 0.7,
+        "atributo_6": 0.7
     }
     
     target_category = row_data["categoria"]
