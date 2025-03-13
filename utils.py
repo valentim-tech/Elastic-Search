@@ -16,6 +16,7 @@ from functools import reduce
 from tqdm import tqdm
 
 MAIN_PATH = "C:/Users/renato.valentim/Documents/ElasticSearch"
+ELASTIC_PATH = "C:/Users/renato.valentim/Elastic-Search"
 
 def convert_string_columns_to_upper(df):
     """
@@ -235,11 +236,11 @@ def generate_actions_attributes(rows):
 
 def weighted_search_similar(row_data, max_hits=None):
     weights = {
-        "desc_product": 0.0,
-        "preco_medio": 0.5,
+        "desc_product": 0.5,
+        "preco_medio": 1.0,
         "categoria": 1.0,
-        "marca": 0.0,
-        "cor": 0.5,
+        "marca": 1.0,
+        "cor": 1.0,
         "atributo_1": 0.5,
         "atributo_2": 0.5,
         "atributo_3": 0.5,
