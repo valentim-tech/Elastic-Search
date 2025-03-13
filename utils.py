@@ -180,6 +180,23 @@ def generate_actions(rows):
             }
         }
 
+def search_similar(desc, max_hits=None):
+    """
+    Buscar ofertas semelhantes
+    """
+    query = {
+        "query": {
+            "match": {
+                "desc_product": desc
+            }
+        }
+    }
+    if max_hits is not None:
+        query["size"] = max_hits  # Adiciona o parâmetro size apenas se max_hits for fornecido
+    
+    response = es.search(index="ofertas_corpus", body=query)
+    return response['hits']['hits']
+
 def normalize_scores(query_id, query_desc, results, max_range=100):
     """
     Normalizar scores de saída do Elastic Search
@@ -348,23 +365,6 @@ def perform_elastic_search_attributes(query_rows, num_results_per_query=1):
         all_results.extend(normalized_results)
 
     return all_results
-
-def search_similar(desc, max_hits=None):
-    """
-    Buscar ofertas semelhantes
-    """
-    query = {
-        "query": {
-            "match": {
-                "desc_product": desc
-            }
-        }
-    }
-    if max_hits is not None:
-        query["size"] = max_hits  # Adiciona o parâmetro size apenas se max_hits for fornecido
-    
-    response = es.search(index="ofertas_corpus", body=query)
-    return response['hits']['hits']
 
 def save_csv(tuple_list, output_path, column_names, delimiter=","):
     """
