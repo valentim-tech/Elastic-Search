@@ -1,0 +1,190 @@
+[
+  {
+    "categoria": "ARMARIOS",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "NÚMERO DE GAVETAS",
+      "atributo_3": "NÚMERO DE PORTAS",
+      "atributo_4": "CONTÉM ESPELHO?",
+      "atributo_5": "TIPO DE MADEIRA",
+      "atributo_6": "CONTÉM PÉS?"
+    }
+  },
+  {
+    "categoria": "BALCOES",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "NÚMERO DE GAVETAS",
+      "atributo_3": "NÚMERO DE PORTAS",
+      "atributo_4": "CONTÉM ESPELHO?",
+      "atributo_5": "TIPO DE MADEIRA",
+      "atributo_6": "CONTÉM PÉS?"
+    }
+  },
+  {
+    "categoria": "BANQUETAS",
+    "atributos": {
+      "atributo_1": "MATERIAL",
+      "atributo_2": "É GIRATÓRIA?"
+    }
+  },
+  {
+    "categoria": "BASES PARA CAMA BOX",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "CONTÉM BAÚ?",
+      "atributo_3": "TAMANHO DA CAMA"
+    }
+  },
+  {
+    "categoria": "CADEIRAS DE ESCRITORIO",
+    "atributos": {
+      "atributo_1": "É GAMER?",
+      "atributo_2": "É GIRATÓRIA?",
+      "atributo_3": "CONTÉM RELAX?"
+    }
+  },
+  {
+    "categoria": "CAMAS BOX",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "DENSIDADE DA ESPUMA",
+      "atributo_3": "TEM MOLA ENSACADA?",
+      "atributo_4": "TAMANHO DA CAMA OU COLCHÃO",
+      "atributo_5": "MACIEZ DA ESPUMA"
+    }
+  },
+  {
+    "categoria": "COLCHOES",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "DENSIDADE DA ESPUMA",
+      "atributo_3": "TEM MOLA ENSACADA?",
+      "atributo_4": "TAMANHO DA CAMA OU COLCHÃO",
+      "atributo_5": "MACIEZ DA ESPUMA"
+    }
+  },
+  {
+    "categoria": "CONJUNTO DE CADEIRAS",
+    "atributos": {
+      "atributo_1": "MATERIAL",
+      "atributo_2": "NÚMERO DE CADEIRAS"
+    }
+  },
+  {
+    "categoria": "CONJUNTO DE MESA E CADEIRAS",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "MATERIAL DO TAMPO",
+      "atributo_3": "NÚMERO DE CADEIRAS"
+    }
+  },
+  {
+    "categoria": "ESTANTES",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "NÚMERO DE GAVETAS",
+      "atributo_3": "NÚMERO DE PORTAS",
+      "atributo_4": "CONTÉM ESPELHO?",
+      "atributo_5": "TIPO DE MADEIRA",
+      "atributo_6": "CONTÉM PÉS?"
+    }
+  },
+  {
+    "categoria": "GUARDA ROUPAS",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "NÚMERO DE GAVETAS",
+      "atributo_3": "NÚMERO DE PORTAS",
+      "atributo_4": "CONTÉM ESPELHO?",
+      "atributo_5": "TIPO DE MADEIRA",
+      "atributo_6": "CONTÉM PÉS?"
+    }
+  },
+  {
+    "categoria": "MESAS DE ESCRITORIO E ESCRIVANINHAS",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "MATERIAL DO TAMPO"
+    }
+  },
+  {
+    "categoria": "MESAS DE JANTAR",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "MATERIAL DO TAMPO",
+      "atributo_3": "FORMATO"
+    }
+  },
+  {
+    "categoria": "PAINEIS PARA TV",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "NÚMERO DE GAVETAS",
+      "atributo_3": "NÚMERO DE PORTAS",
+      "atributo_4": "CONTÉM ESPELHO?",
+      "atributo_5": "TIPO DE MADEIRA",
+      "atributo_6": "CONTÉM PÉS?"
+    }
+  },
+  {
+    "categoria": "POLTRONAS",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "TIPO DE TECIDO",
+      "atributo_3": "RECLINÁVEL"
+    }
+  },
+  {
+    "categoria": "RACKS",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "NÚMERO DE GAVETAS",
+      "atributo_3": "NÚMERO DE PORTAS",
+      "atributo_4": "CONTÉM ESPELHO?",
+      "atributo_5": "TIPO DE MADEIRA",
+      "atributo_6": "CONTÉM PÉS?"
+    }
+  },
+  {
+    "categoria": "RACKS COM PAINEIS",
+    "atributos": {
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "NÚMERO DE GAVETAS",
+      "atributo_3": "NÚMERO DE PORTAS",
+      "atributo_4": "CONTÉM ESPELHO?",
+      "atributo_5": "TIPO DE MADEIRA",
+      "atributo_6": "CONTÉM PÉS?"
+    }
+  },
+  {
+    "categoria": "REDES E ESPREGUICADEIRAS",
+    "atributos": {
+      "atributo_1": "DIMENSÕES"
+    }
+  },
+  {
+    "categoria": "SOFAS",
+    "atributos": {
+      "atributo_1": "NÚMERO DE LUGARES",
+      "atributo_2": "TIPO DE TECIDO",
+      "atributo_3": "É RETRÁTIL?",
+      "atributo_4": "DIMENSÕES"
+    }
+  },
+  {
+    "categoria": "SOFAS CAMA",
+    "atributos": {
+      "atributo_1": "NÚMERO DE LUGARES",
+      "atributo_2": "TIPO DE TECIDO",
+      "atributo_3": "É RETRÁTIL?",
+      "atributo_4": "DIMENSÕES"
+    }
+  },
+  {
+    "categoria": "TRAVESSEIROS",
+    "atributos": {
+      "atributo_1": "TIPO DE TRAVESSEIRO"
+    }
+  }
+]
