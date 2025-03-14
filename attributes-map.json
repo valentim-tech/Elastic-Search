@@ -2,38 +2,45 @@
   {
     "categoria": "ARMARIOS",
     "atributos": {
-      "atributo_1": "DIMENSÕES",
-      "atributo_2": "NÚMERO DE GAVETAS",
-      "atributo_3": "NÚMERO DE PORTAS",
-      "atributo_4": "CONTÉM ESPELHO?",
-      "atributo_5": "TIPO DE MADEIRA",
-      "atributo_6": "CONTÉM PÉS?"
+      "atributo_1": "CONTÉM ESPELHO?",
+      "atributo_2": "TIPO DE MADEIRA",
+      "atributo_3": "CONTÉM PÉS?",
+      "atributo_4": "DIMENSÕES",
+      "atributo_5": "NÚMERO DE GAVETAS",
+      "atributo_6": "NÚMERO DE PORTAS"
     }
   },
   {
     "categoria": "BALCOES",
     "atributos": {
-      "atributo_1": "DIMENSÕES",
-      "atributo_2": "NÚMERO DE GAVETAS",
-      "atributo_3": "NÚMERO DE PORTAS",
-      "atributo_4": "CONTÉM ESPELHO?",
-      "atributo_5": "TIPO DE MADEIRA",
-      "atributo_6": "CONTÉM PÉS?"
+      "atributo_1": "CONTÉM ESPELHO?",
+      "atributo_2": "TIPO DE MADEIRA",
+      "atributo_3": "CONTÉM PÉS?",
+      "atributo_4": "DIMENSÕES",
+      "atributo_5": "NÚMERO DE GAVETAS",
+      "atributo_6": "NÚMERO DE PORTAS"
     }
   },
   {
     "categoria": "BANQUETAS",
     "atributos": {
-      "atributo_1": "MATERIAL",
-      "atributo_2": "É GIRATÓRIA?"
+      "atributo_1": "É GIRATÓRIA?",
+      "atributo_2": "MATERIAL",
+      "atributo_3": "NAO SE APLICA",
+      "atributo_4": "NAO SE APLICA",
+      "atributo_5": "NAO SE APLICA",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
     "categoria": "BASES PARA CAMA BOX",
     "atributos": {
-      "atributo_1": "DIMENSÕES",
+      "atributo_1": "TAMANHO DA CAMA",
       "atributo_2": "CONTÉM BAÚ?",
-      "atributo_3": "TAMANHO DA CAMA"
+      "atributo_3": "DIMENSÕES",
+      "atributo_4": "NAO SE APLICA",
+      "atributo_5": "NAO SE APLICA",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
@@ -41,7 +48,10 @@
     "atributos": {
       "atributo_1": "É GAMER?",
       "atributo_2": "É GIRATÓRIA?",
-      "atributo_3": "CONTÉM RELAX?"
+      "atributo_3": "CONTÉM RELAX?",
+      "atributo_4": "NAO SE APLICA",
+      "atributo_5": "NAO SE APLICA",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
@@ -49,9 +59,10 @@
     "atributos": {
       "atributo_1": "DIMENSÕES",
       "atributo_2": "DENSIDADE DA ESPUMA",
-      "atributo_3": "TEM MOLA ENSACADA?",
+      "atributo_3": "MACIEZ DA ESPUMA",
       "atributo_4": "TAMANHO DA CAMA OU COLCHÃO",
-      "atributo_5": "MACIEZ DA ESPUMA"
+      "atributo_5": "TEM MOLA ENSACADA?",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
@@ -59,132 +70,164 @@
     "atributos": {
       "atributo_1": "DIMENSÕES",
       "atributo_2": "DENSIDADE DA ESPUMA",
-      "atributo_3": "TEM MOLA ENSACADA?",
+      "atributo_3": "MACIEZ DA ESPUMA",
       "atributo_4": "TAMANHO DA CAMA OU COLCHÃO",
-      "atributo_5": "MACIEZ DA ESPUMA"
+      "atributo_5": "TEM MOLA ENSACADA?",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
     "categoria": "CONJUNTO DE CADEIRAS",
     "atributos": {
-      "atributo_1": "MATERIAL",
-      "atributo_2": "NÚMERO DE CADEIRAS"
+      "atributo_1": "NÚMERO DE CADEIRAS",
+      "atributo_2": "MATERIAL",
+      "atributo_3": "NAO SE APLICA",
+      "atributo_4": "NAO SE APLICA",
+      "atributo_5": "NAO SE APLICA",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
     "categoria": "CONJUNTO DE MESA E CADEIRAS",
     "atributos": {
-      "atributo_1": "DIMENSÕES",
-      "atributo_2": "MATERIAL DO TAMPO",
-      "atributo_3": "NÚMERO DE CADEIRAS"
+      "atributo_1": "NÚMERO DE CADEIRAS",
+      "atributo_2": "DIMENSÕES",
+      "atributo_3": "MATERIAL DO TAMPO",
+      "atributo_4": "NAO SE APLICA",
+      "atributo_5": "NAO SE APLICA",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
     "categoria": "ESTANTES",
     "atributos": {
-      "atributo_1": "DIMENSÕES",
-      "atributo_2": "NÚMERO DE GAVETAS",
-      "atributo_3": "NÚMERO DE PORTAS",
-      "atributo_4": "CONTÉM ESPELHO?",
-      "atributo_5": "TIPO DE MADEIRA",
-      "atributo_6": "CONTÉM PÉS?"
+      "atributo_1": "CONTÉM ESPELHO?",
+      "atributo_2": "TIPO DE MADEIRA",
+      "atributo_3": "CONTÉM PÉS?",
+      "atributo_4": "DIMENSÕES",
+      "atributo_5": "NÚMERO DE GAVETAS",
+      "atributo_6": "NÚMERO DE PORTAS"
     }
   },
   {
     "categoria": "GUARDA ROUPAS",
     "atributos": {
-      "atributo_1": "DIMENSÕES",
-      "atributo_2": "NÚMERO DE GAVETAS",
-      "atributo_3": "NÚMERO DE PORTAS",
-      "atributo_4": "CONTÉM ESPELHO?",
-      "atributo_5": "TIPO DE MADEIRA",
-      "atributo_6": "CONTÉM PÉS?"
+      "atributo_1": "CONTÉM ESPELHO?",
+      "atributo_2": "TIPO DE MADEIRA",
+      "atributo_3": "CONTÉM PÉS?",
+      "atributo_4": "DIMENSÕES",
+      "atributo_5": "NÚMERO DE GAVETAS",
+      "atributo_6": "NÚMERO DE PORTAS"
     }
   },
   {
     "categoria": "MESAS DE ESCRITORIO E ESCRIVANINHAS",
     "atributos": {
       "atributo_1": "DIMENSÕES",
-      "atributo_2": "MATERIAL DO TAMPO"
+      "atributo_2": "MATERIAL DO TAMPO",
+      "atributo_3": "NAO SE APLICA",
+      "atributo_4": "NAO SE APLICA",
+      "atributo_5": "NAO SE APLICA",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
     "categoria": "MESAS DE JANTAR",
     "atributos": {
-      "atributo_1": "DIMENSÕES",
-      "atributo_2": "MATERIAL DO TAMPO",
-      "atributo_3": "FORMATO"
+      "atributo_1": "FORMATO",
+      "atributo_2": "DIMENSÕES",
+      "atributo_3": "MATERIAL DO TAMPO",
+      "atributo_4": "NAO SE APLICA",
+      "atributo_5": "NAO SE APLICA",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
     "categoria": "PAINEIS PARA TV",
     "atributos": {
-      "atributo_1": "DIMENSÕES",
-      "atributo_2": "NÚMERO DE GAVETAS",
-      "atributo_3": "NÚMERO DE PORTAS",
-      "atributo_4": "CONTÉM ESPELHO?",
-      "atributo_5": "TIPO DE MADEIRA",
-      "atributo_6": "CONTÉM PÉS?"
+      "atributo_1": "CONTÉM ESPELHO?",
+      "atributo_2": "TIPO DE MADEIRA",
+      "atributo_3": "CONTÉM PÉS?",
+      "atributo_4": "DIMENSÕES",
+      "atributo_5": "NÚMERO DE GAVETAS",
+      "atributo_6": "NÚMERO DE PORTAS"
     }
   },
   {
     "categoria": "POLTRONAS",
     "atributos": {
-      "atributo_1": "DIMENSÕES",
-      "atributo_2": "TIPO DE TECIDO",
-      "atributo_3": "RECLINÁVEL"
+      "atributo_1": "RECLINÁVEL",
+      "atributo_2": "DIMENSÕES",
+      "atributo_3": "TIPO DE TECIDO",
+      "atributo_4": "NAO SE APLICA",
+      "atributo_5": "NAO SE APLICA",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
     "categoria": "RACKS",
     "atributos": {
-      "atributo_1": "DIMENSÕES",
-      "atributo_2": "NÚMERO DE GAVETAS",
-      "atributo_3": "NÚMERO DE PORTAS",
-      "atributo_4": "CONTÉM ESPELHO?",
-      "atributo_5": "TIPO DE MADEIRA",
-      "atributo_6": "CONTÉM PÉS?"
+      "atributo_1": "CONTÉM ESPELHO?",
+      "atributo_2": "TIPO DE MADEIRA",
+      "atributo_3": "CONTÉM PÉS?",
+      "atributo_4": "DIMENSÕES",
+      "atributo_5": "NÚMERO DE GAVETAS",
+      "atributo_6": "NÚMERO DE PORTAS"
     }
   },
   {
     "categoria": "RACKS COM PAINEIS",
     "atributos": {
-      "atributo_1": "DIMENSÕES",
-      "atributo_2": "NÚMERO DE GAVETAS",
-      "atributo_3": "NÚMERO DE PORTAS",
-      "atributo_4": "CONTÉM ESPELHO?",
-      "atributo_5": "TIPO DE MADEIRA",
-      "atributo_6": "CONTÉM PÉS?"
+      "atributo_1": "CONTÉM ESPELHO?",
+      "atributo_2": "TIPO DE MADEIRA",
+      "atributo_3": "CONTÉM PÉS?",
+      "atributo_4": "DIMENSÕES",
+      "atributo_5": "NÚMERO DE GAVETAS",
+      "atributo_6": "NÚMERO DE PORTAS"
     }
   },
   {
     "categoria": "REDES E ESPREGUICADEIRAS",
     "atributos": {
-      "atributo_1": "DIMENSÕES"
+      "atributo_1": "DIMENSÕES",
+      "atributo_2": "NAO SE APLICA",
+      "atributo_3": "NAO SE APLICA",
+      "atributo_4": "NAO SE APLICA",
+      "atributo_5": "NAO SE APLICA",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
     "categoria": "SOFAS",
     "atributos": {
       "atributo_1": "NÚMERO DE LUGARES",
-      "atributo_2": "TIPO DE TECIDO",
-      "atributo_3": "É RETRÁTIL?",
-      "atributo_4": "DIMENSÕES"
+      "atributo_2": "É RETRÁTIL?",
+      "atributo_3": "TIPO DE TECIDO",
+      "atributo_4": "DIMENSÕES",
+      "atributo_5": "NAO SE APLICA",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
     "categoria": "SOFAS CAMA",
     "atributos": {
       "atributo_1": "NÚMERO DE LUGARES",
-      "atributo_2": "TIPO DE TECIDO",
-      "atributo_3": "É RETRÁTIL?",
-      "atributo_4": "DIMENSÕES"
+      "atributo_2": "É RETRÁTIL?",
+      "atributo_3": "TIPO DE TECIDO",
+      "atributo_4": "DIMENSÕES",
+      "atributo_5": "NAO SE APLICA",
+      "atributo_6": "NAO SE APLICA"
     }
   },
   {
     "categoria": "TRAVESSEIROS",
     "atributos": {
-      "atributo_1": "TIPO DE TRAVESSEIRO"
+      "atributo_1": "TIPO DE TRAVESSEIRO",
+      "atributo_2": "NAO SE APLICA",
+      "atributo_3": "NAO SE APLICA",
+      "atributo_4": "NAO SE APLICA",
+      "atributo_5": "NAO SE APLICA",
+      "atributo_6": "NAO SE APLICA"
     }
   }
 ]

@@ -258,35 +258,35 @@ def generate_actions_attributes(rows):
         }
 
 def weighted_search_similar(row_data, max_hits=None):
-    # Pesos para busca exata
-    weights = {
-        "desc_product": 0.5,
-        "preco_medio": 1.0,
-        "categoria": 1.0,
-        "marca": 1.0,
-        "cor": 1.0,
-        "atributo_1": 0.5,
-        "atributo_2": 0.5,
-        "atributo_3": 0.5,
-        "atributo_4": 0.5,
-        "atributo_5": 0.5,
-        "atributo_6": 0.5
-    }
-
-    # # Pesos para busca de concorrentes
+    # # Pesos para busca exata
     # weights = {
-    #     "desc_product": 0.0,
-    #     "preco_medio": 0.7,
+    #     "desc_product": 0.5,
+    #     "preco_medio": 1.0,
     #     "categoria": 1.0,
-    #     "marca": 0.0,
+    #     "marca": 1.0,
     #     "cor": 1.0,
-    #     "atributo_1": 0.7,
+    #     "atributo_1": 0.5,
     #     "atributo_2": 0.5,
-    #     "atributo_3": 0.3,
+    #     "atributo_3": 0.5,
     #     "atributo_4": 0.5,
-    #     "atributo_5": 0.7,
-    #     "atributo_6": 0.7
+    #     "atributo_5": 0.5,
+    #     "atributo_6": 0.5
     # }
+
+    # Pesos para busca de concorrentes
+    weights = {
+        "desc_product": 0.0,
+        "preco_medio": 0.7,
+        "categoria": 1.0,
+        "marca": 0.0,
+        "cor": 1.0,
+        "atributo_1": 0.7,
+        "atributo_2": 0.5,
+        "atributo_3": 0.3,
+        "atributo_4": 0.5,
+        "atributo_5": 0.7,
+        "atributo_6": 0.7
+    }
     
     target_category = row_data["categoria"]
     if not target_category:
@@ -384,7 +384,7 @@ def perform_elastic_search_attributes(query_rows, num_results_per_query=1):
 
 def save_csv(tuple_list, output_path, column_names, delimiter=","):
     """
-    Salva resultados em csv
+    Salvar resultados em csv
     """
     with open(output_path, 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile, delimiter=delimiter)
@@ -392,6 +392,33 @@ def save_csv(tuple_list, output_path, column_names, delimiter=","):
         writer.writerow(column_names)
         # Dados
         writer.writerows(tuple_list)
+
+def prefixar_atributos(row, json_map):
+    """
+    Função para prefixar os atributos
+    """
+    categoria = row["categoria"]
+    atributos = json_map.get(categoria, ["NAO SE APLICA"] * 6)
+    for i in range(1, 7):
+        row[f"atributo_{i}"] = f"{atributos[i-1]}: {row[f'atributo_{i}']}"
+    return row
+
+def load_json(caminho_arquivo, encoding="utf-8"):
+    """
+    Ler um arquivo JSON e retornar seu conteúdo como um objeto Python.
+    """
+    try:
+        with open(caminho_arquivo, "r", encoding=encoding) as f:
+            return json.load(f)
+    except FileNotFoundError:
+        print(f"Erro: O arquivo '{caminho_arquivo}' não foi encontrado.")
+        raise
+    except json.JSONDecodeError as e:
+        print(f"Erro: Falha ao decodificar o JSON em '{caminho_arquivo}'. Detalhes: {e}")
+        raise
+    except Exception as e:
+        print(f"Erro inesperado ao ler o arquivo '{caminho_arquivo}': {e}")
+        raise
 
 # Criar spark session
 spark = (
